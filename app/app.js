@@ -5,11 +5,11 @@ app.config(function($routeProvider){
 	$routeProvider.
 		when("/contacts/list", {
 			templateUrl: "partials/contact-list.html",
-			controller: "ItemListCtrl"
+			controller: "ContactListCtrl"
 		}).
 		when("/contacts/new", {
 			templateUrl: "partials/contact-new.html",
-			controller: "ItemNewCtrl"
+			controller: "ContactNewCtrl"
 		}).
 		otherwise("/contacts/list");
 });
