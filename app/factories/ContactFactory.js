@@ -27,27 +27,28 @@ app.factory("contactStorage", function($q, $http, firebaseURL){
 		});
 	};
 
-	// var postNewItem = function(newItem){
- //        return $q(function(resolve, reject) {
- //            $http.post(
- //                firebaseURL + "items.json",
- //                JSON.stringify({
- //                    assignedTo: newItem.assignedTo,
- //                    dependencies: newItem.dependencies,
- //                    dueDate: newItem.dueDate,
- //                    isCompleted: newItem.isCompleted,
- //                    location: newItem.location,
- //                    task: newItem.task,
- //                    urgency: newItem.urgency
- //                })
- //            )
- //            .success(
- //                function(objectFromFirebase) {
- //                    resolve(objectFromFirebase);
- //                }
- //            );
- //        });
-	// };
+	var postNewContact = function(newContact){
+        return $q(function(resolve, reject) {
+            $http.post(
+                firebaseURL + "contacts.json",
+                JSON.stringify({
+                    firstName: newContact.firstName,
+                    lastName: newContact.lastName,
+                    phone: newContact.phone,
+                    address: newContact.address,
+                    email: newContact.address,
+                    company: newContact.company,
+                    shitListed: newContact.shitListed,
+                    notes: newContact.notes
+                })
+            )
+            .success(
+                function(objectFromFirebase) {
+                    resolve(objectFromFirebase);
+                }
+            );
+        });
+	};
 
 	// var getSingleItem = function(itemId){
 	// 	return $q(function(resolve, reject){
@@ -105,6 +106,6 @@ app.factory("contactStorage", function($q, $http, firebaseURL){
  //        });
 	// };
 
-	return {getContactList:getContactList, deleteContact:deleteContact};
+	return {getContactList:getContactList, deleteContact:deleteContact, postNewContact:postNewContact};
 
 });
