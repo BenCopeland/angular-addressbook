@@ -12,5 +12,9 @@ app.config(function($routeProvider){
 			templateUrl: "partials/contact-new.html",
 			controller: "ContactNewCtrl"
 		}).
+		// when("/contacts/new", {
+		// 	templateUrl: "partials/contact-new.html",
+		// 	controller: "ContactNewCtrl"
+		// }).
 		otherwise("/contacts/list");
 });

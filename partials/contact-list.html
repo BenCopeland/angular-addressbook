@@ -11,20 +11,30 @@
     </div>
   </div>
 </div>
+
+<!-- buffer -->
+<div class="row">
+  <div class="bufferWrap">
+    <div class="col-xs-5"><h5>Name</h5></div>
+    <div class="col-xs-5"><h5>Phone Number</h5></div>
+  </div>
+</div>
+
 <div ng-repeat="thingy in contacts | filter: searchText">
   <div class="panel panel-default">
     <div class="panel-body">
       <!-- <div class="col-xs-1"><input type="checkbox" name=""/></div> -->
       <div class="row">
-	      <div class="col-xs-2">{{thingy.firstName}}</div>
+	      <div class="col-xs-5">{{thingy.firstName}} {{thingy.lastName}}</div>
 	      <div class="col-xs-5">{{thingy.phone}}</div>
-	      <div class="col-xs-5">{{thingy.company}}</div>
-      </div>
-      <div class="row">
-	      <div class="col-xs-2">{{thingy.lastName}}</div>
-	      <div class="col-xs-9">{{thingy.email}}</div>
 	      <div class="col-xs-1"><button class="btn btn-danger" ng-click="contactDelete(thingy.id)">X</button></div>
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+
+
