@@ -1,0 +1,44 @@
+{
+	"contacts": {
+		"contact0":{
+			"firstName": "Scot",
+			"lastName": "Copeland",
+			"phone": "(615)830-2937",
+			"address": "Nashville, TN",
+			"email": "scopeland@nashvillechildrenstheatre.org",
+			"company": "Nashville Children's Theatre",
+			"shitListed": false,
+			"notes": "Classic burly Father. 'Pops' for short."
+		},
+		"contact1":{
+			"firstName": "Rene",
+			"lastName": "Copeland",
+			"phone": "(615)830-2936",
+			"address": "Nashville, TN",
+			"email": "Rene@nashvillerep.org",
+			"company": "Nashville Children's Theatre",
+			"shitListed": false,
+			"notes": "Classic well-meaning Mother. Red > white."
+		},
+		"contact2":{
+			"firstName": "Josh",
+			"lastName": "Copeland",
+			"phone": "(615)830-2938",
+			"address": "Los Angeles, CA",
+			"email": "JoshDanger@gmail.com",
+			"company": "No Kings",
+			"shitListed": false,
+			"notes": "Nobody gets me like this fucker, brothers are like that."
+		},
+		"contact3":{
+			"firstName": "Sean",
+			"lastName": "Rodondo",
+			"phone": "(615)555-5555",
+			"address": "Nashville, CA",
+			"email": "badwithmoney@gmail.com",
+			"company": "Lyft and some vietnamese restaurant",
+			"shitListed": true,
+			"notes": "Good friend, shitty with money. Shit-listed until he pays me the $600 he owes me."
+		}
+	}
+}
