@@ -2,7 +2,7 @@ app.controller("NavCtrl", function($scope){
 	$scope.navItems = [
 	{
 		name: "Shit-List",
-		url: "#/contacts/list"
+		url: "#/contacts/shit"
 	},
 	{
 		name: "All Contacts",

@@ -15,19 +15,27 @@
 <!-- buffer -->
 <div class="row">
   <div class="bufferWrap">
-    <div class="col-xs-5"><h5>Name</h5></div>
-    <div class="col-xs-5"><h5>Phone Number</h5></div>
+    <!-- <div class="col-xs-1"></div> -->
+    <div class="col-xs-1">
+      <img class="poo buffer" src="http://emojipedia-us.s3.amazonaws.com/cache/14/d3/14d3cda6b6d3b9f7d6b3e250362b4431.png">
+    </div>
+    <div class="col-xs-5"><h5 class="buffer">Name</h5></div>
+    <div class="col-xs-4"><h5 class="">Phone Number</h5></div>
   </div>
 </div>
 
 <div ng-repeat="thingy in contacts | filter: searchText">
   <div class="panel panel-default">
     <div class="panel-body">
-      <!-- <div class="col-xs-1"><input type="checkbox" name=""/></div> -->
+      <div class="col-xs-1"><input type="checkbox" name=""/></div>
       <div class="row">
 	      <div class="col-xs-5">{{thingy.firstName}} {{thingy.lastName}}</div>
-	      <div class="col-xs-5">{{thingy.phone}}</div>
-	      <div class="col-xs-1"><button class="btn btn-danger" ng-click="contactDelete(thingy.id)">X</button></div>
+	      <div class="col-xs-4">{{thingy.phone}}</div>
+	      <div class="col-xs-1">
+          <button class="btn btn-danger" ng-click="contactDelete(thingy.id)">
+            <i class="fa fa-trash-o" aria-hidden="true"></i> 
+          </button>
+        </div>
       </div>
     </div>
   </div>
