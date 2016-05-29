@@ -8,6 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <div ng-repeat="thingy in contacts | filter: searchText"></div>
       <a class="navbar-brand" href="#">
         <img alt="Brand" src="http://1.images.southparkstudios.com/images/shows/south-park/clip-thumbnails/season-6/0608/south-park-s06e08c07-randy-tries-it-out-16x9.jpg?quality=0.8">
       </a>
@@ -18,6 +19,7 @@
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form> -->
+      
 
       <div class="navbar-form navbar-left" role="search">
         <div class="input-group">
@@ -29,6 +31,7 @@
           <input type="test" class="form-control" placeholder="Search Contacts" ng-model="searchText">
         </div>
       </div>
+
 
 <!--       <input type="test" class="form-control" placeholder="Search Contacts" ng-model="searchText"> -->
 

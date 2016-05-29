@@ -15,7 +15,7 @@ app.controller("ContactNewCtrl", function($scope, $location, contactStorage){
     $scope.addNewContact = function(){
         contactStorage.postNewContact($scope.newTask)
             .then(function successCallback(response) {
-                // console.log(response);
+                console.log(response);
                 $location.url("/contacts/list");
             });
     };

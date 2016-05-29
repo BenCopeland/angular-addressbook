@@ -14,7 +14,7 @@ app.config(function($routeProvider){
 		}).
 		when("/contacts/:contactId", {
 			templateUrl: "partials/contact-details.html",
-			controller: "ContactViewCtrl"
+			controller: "ContactDetailsCtrl"
 		}).
 		when("/contacts/:contactId/edit", {
 			templateUrl: "partials/contact-new.html",

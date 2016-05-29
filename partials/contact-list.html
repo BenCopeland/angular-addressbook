@@ -29,7 +29,8 @@
     <div class="panel-body">
       <div class="col-xs-1"><input type="checkbox" name=""/></div>
       <div class="row">
-	      <div class="col-xs-5">{{thingy.firstName}} {{thingy.lastName}}</div>
+<!--       <a ng-href="#/items/{{thingy.id}}">{{thingy.task}}</a></div> -->
+	      <div class="col-xs-5"><a ng-href="#/contacts/{{thingy.id}}">{{thingy.firstName}} {{thingy.lastName}}</a></div>
 	      <div class="col-xs-4">{{thingy.phone}}</div>
 	      <div class="col-xs-1">
           <button class="btn btn-danger" ng-click="contactDelete(thingy.id)">
