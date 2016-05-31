@@ -19,7 +19,7 @@ app.controller("ContactListCtrl", function($scope, contactStorage){
         contactStorage.updateShitlistStatus(contact)
             .then(function(response){
                 // console.log(response);
-        })
-    }
+        });
+    };
 
-});
+});	
