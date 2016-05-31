@@ -15,11 +15,11 @@ app.controller("ContactListCtrl", function($scope, contactStorage){
         });
     };
 
- //    $scope.inputChange = function(item){
- //        itemStorage.updateCompletedStatus(item)
- //            .then(function(response){
- //                // console.log(response);
- //        })
- //    }
+    $scope.inputChange = function(contact){
+        contactStorage.updateShitlistStatus(contact)
+            .then(function(response){
+                // console.log(response);
+        })
+    }
 
 });

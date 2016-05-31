@@ -85,28 +85,29 @@ app.factory("contactStorage", function($q, $http, firebaseURL){
         });
 	};
 
-	// var updateCompletedStatus = function(newItem){
- //        return $q(function(resolve, reject) {
- //            $http.put(
- //                firebaseURL + "items/" + newItem.id + ".json",
- //                JSON.stringify({
- //                    assignedTo: newItem.assignedTo,
- //                    dependencies: newItem.dependencies,
- //                    dueDate: newItem.dueDate,
- //                    isCompleted: newItem.isCompleted,
- //                    location: newItem.location,
- //                    task: newItem.task,
- //                    urgency: newItem.urgency
- //                })
- //            )
- //            .success(
- //                function(objectFromFirebase) {
- //                    resolve(objectFromFirebase);
- //                }
- //            );
- //        });
-	// };
+	var updateShitlistStatus = function(newContact){
+        return $q(function(resolve, reject) {
+            $http.put(
+                firebaseURL + "contacts/" + newContact.id + ".json",
+                JSON.stringify({
+                    firstName: newContact.firstName,
+                    lastName: newContact.lastName,
+                    phone: newContact.phone,
+                    address: newContact.address,
+                    email: newContact.address,
+                    company: newContact.company,
+                    shitListed: newContact.shitListed,
+                    notes: newContact.notes
+                })
+            )
+            .success(
+                function(objectFromFirebase) {
+                    resolve(objectFromFirebase);
+                }
+            );
+        });
+	};
 
-	return {getContactList:getContactList, deleteContact:deleteContact, postNewContact:postNewContact, getSingleContact:getSingleContact, updateContact:updateContact};
+	return {getContactList:getContactList, deleteContact:deleteContact, postNewContact:postNewContact, getSingleContact:getSingleContact, updateContact:updateContact, updateShitlistStatus:updateShitlistStatus};
 
 });
