@@ -1,21 +1,22 @@
-app.factory("contactStorage", function($q, $http, firebaseURL){
+app.factory("contactStorage", function($q, $http, firebaseURL, AuthFactory){
 	var getContactList = function(){
-		var contacts = [];
-		return $q(function(resolve, reject){
-			$http.get(firebaseURL + "contacts.json")
-			.success(function(contactObject){
-				var contactCollection = contactObject;
-				Object.keys(contactCollection).forEach(function(key){
-					contactCollection[key].id = key;
-					contacts.push(contactCollection[key]);
-				});
-				resolve(contacts);
-			})
-			.error(function(error){
-				reject(error);
-			});
-		});
-	};
+        var contacts = [];
+        let user = AuthFactory.getUser();
+        return $q(function(resolve, reject){
+            $http.get(`${firebaseURL}contacts.json?orderBy="uid"&equalTo="${user.uid}"`)
+            .success(function(contactObject){
+                var contactCollection = contactObject;
+                Object.keys(contactCollection).forEach(function(key){
+                    contactCollection[key].id = key;
+                    contacts.push(contactCollection[key]);
+                });
+                resolve(contacts);
+            })
+            .error(function(error){
+                reject(error);
+            });
+        });
+    };
 
 	var deleteContact = function(contactId){
 		return $q(function(resolve, reject){
@@ -28,6 +29,7 @@ app.factory("contactStorage", function($q, $http, firebaseURL){
 	};
 
 	var postNewContact = function(newContact){
+        let user = AuthFactory.getUser();
         return $q(function(resolve, reject) {
             $http.post(
                 firebaseURL + "contacts.json",
@@ -39,7 +41,8 @@ app.factory("contactStorage", function($q, $http, firebaseURL){
                     email: newContact.address,
                     company: newContact.company,
                     shitListed: newContact.shitListed,
-                    notes: newContact.notes
+                    notes: newContact.notes,
+                    uid: user.uid
                 })
             )
             .success(
@@ -63,6 +66,7 @@ app.factory("contactStorage", function($q, $http, firebaseURL){
 	};
 
 	var updateContact = function(contactId, newContact){
+        let user = AuthFactory.getUser();
         return $q(function(resolve, reject) {
             $http.put(
                 firebaseURL + "contacts/" + contactId + ".json",
@@ -74,7 +78,8 @@ app.factory("contactStorage", function($q, $http, firebaseURL){
                     email: newContact.address,
                     company: newContact.company,
                     shitListed: newContact.shitListed,
-                    notes: newContact.notes
+                    notes: newContact.notes,
+                    uid: user.uid
                 })
             )
             .success(

@@ -9,7 +9,8 @@ app.controller("ContactNewCtrl", function($scope, $location, contactStorage){
         email: "",
         company: "",
         shitListed: false,
-        notes: ""
+        notes: "",
+        uid: ""
     };
       
     $scope.addNewContact = function(){
