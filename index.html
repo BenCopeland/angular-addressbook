@@ -1,37 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Address Book</title>
+	<title>Address Book App</title>
 	<link rel="stylesheet" type="text/css" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
-<body  ng-app="TodoApp">
-<nav class="navbar navbar-default" ng-controller="NavCtrl">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Todo App</a>
-    </div>
+<body  ng-app="AddressApp">
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right" ng-repeat="thingy in navItems">
-        <li><a ng-href="{{thingy.url}}">{{thingy.name}}</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+  <!-- navbar oputput -->
+  <div ng-include="'partials/nav-bar.html'"></div>
+
+  <!-- main content oputput -->
   <div class="row">
     <div class="col-xs-10 col-xs-offset-1 main-container">
       <div class="col-xs-12" ng-view>
-
       </div>
     </div>
   </div>
@@ -42,10 +25,17 @@
 <script type="text/javascript" src="lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="lib/bower_components/angular/angular.min.js"></script>
 <script type="text/javascript" src="lib/bower_components/angular-route/angular-route.min.js"></script>
+<script type="text/javascript" src="lib/bower_components/firebase/firebase.js"></script>
+<script type="text/javascript" src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
 <script type="text/javascript" src="app/app.js"></script>
-<script type="text/javascript" src="app/controllers/NavCtrl.js"></script>
+<script type="text/javascript" src="app/factories/AuthFactory.js"></script>
+<script type="text/javascript" src="app/factories/ContactFactory.js"></script>
+<script type="text/javascript" src="app/controllers/LoginCtrl.js"></script>
+<!-- <script type="text/javascript" src="app/controllers/NavCtrl.js"></script> -->
 <script type="text/javascript" src="app/controllers/ContactListCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/ContactNewCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/ContactDetailsCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/ContactEditCtrl.js"></script>
 
 
 </body>

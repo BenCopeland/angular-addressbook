@@ -1,0 +1,85 @@
+<h1>Address Book</h1>
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+      </span>
+      <input type="test" class="form-control" placeholder="Search Contacts" ng-model="searchText">
+    </div>
+  </div>
+</div>
+
+<h3>Contacts</h3>
+<!-- buffer -->
+<div class="row">
+  <div class="bufferWrap">
+    <!-- <div class="col-xs-1"></div> -->
+    <div class="col-xs-1">
+      <img class="poo buffer" src="http://emojipedia-us.s3.amazonaws.com/cache/14/d3/14d3cda6b6d3b9f7d6b3e250362b4431.png">
+    </div>
+    <div class="col-xs-5"><h5 class="buffer">Name</h5></div>
+    <div class="col-xs-4"><h5 class="">Phone Number</h5></div>
+  </div>
+</div>
+
+<div ng-repeat="thingy in contacts | filter: searchText">
+  <div class="panel panel-default" ng-hide="thingy.shitListed">
+    <div class="panel-body">
+      <div class="col-xs-1"><input type="checkbox" ng-model="thingy.shitListed" ng-change="inputChange(thingy)"/></div>
+      <div class="row">
+<!--       <a ng-href="#/items/{{thingy.id}}">{{thingy.task}}</a></div> -->
+	      <div class="col-xs-5"><a ng-href="#/contacts/{{thingy.id}}">{{thingy.firstName}} {{thingy.lastName}}</a></div>
+	      <div class="col-xs-4">{{thingy.phone}}</div>
+	      <div class="col-xs-1">
+          <button class="btn btn-danger" ng-click="contactDelete(thingy.id)">
+            <i class="fa fa-trash-o" aria-hidden="true"></i> 
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>SHIT LIST</h3>
+<!-- buffer -->
+<div class="row">
+  <div class="bufferWrap">
+    <!-- <div class="col-xs-1"></div> -->
+    <div class="col-xs-1">
+      <img class="poo buffer" src="http://emojipedia-us.s3.amazonaws.com/cache/14/d3/14d3cda6b6d3b9f7d6b3e250362b4431.png">
+    </div>
+    <div class="col-xs-5"><h5 class="buffer">Name</h5></div>
+    <div class="col-xs-4"><h5 class="">Phone Number</h5></div>
+  </div>
+</div>
+
+<div ng-repeat="thingy in contacts | filter: {shitListed: true}">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="col-xs-1"><input type="checkbox" ng-model="thingy.shitListed" ng-change="inputChange(thingy)"/></div>
+      <div class="row">
+  <!--       <a ng-href="#/items/{{thingy.id}}">{{thingy.task}}</a></div> -->
+        <div class="col-xs-5"><a ng-href="#/contacts/{{thingy.id}}">{{thingy.firstName}} {{thingy.lastName}}</a></div>
+        <div class="col-xs-4">{{thingy.phone}}</div>
+        <div class="col-xs-1">
+          <button class="btn btn-danger" ng-click="contactDelete(thingy.id)">
+            <i class="fa fa-trash-o" aria-hidden="true"></i> 
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--  -->
+
+
+
+
+
+
